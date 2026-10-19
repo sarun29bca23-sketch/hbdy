@@ -1,0 +1,563 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffb8c6">
+<title>Happy 21st Birthday, Chrissnaa! 🎂</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Pacifico&family=Baloo+2:wght@500;700;800&display=swap');
+
+:root {
+  --pink: #ffb8c6;
+  --coral: #ff7185;
+  --cream: #fff8e9;
+  --purple: #713c62;
+  --gold: #ffda78;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--purple);
+  background:
+    radial-gradient(circle at 15% 10%, #fff1d4, transparent 35%),
+    radial-gradient(circle at 90% 35%, #ffd3e1, transparent 35%),
+    linear-gradient(135deg, #ffb8a6, #ffe3d8, #ffc8dc);
+}
+
+.bunting {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.bunting span {
+  width: 0;
+  height: 0;
+  border-left: 17px solid transparent;
+  border-right: 17px solid transparent;
+  border-top: 38px solid #ff7185;
+}
+
+.bunting span:nth-child(3n) { border-top-color: #fff1d4; }
+.bunting span:nth-child(3n + 1) { border-top-color: #d78eb0; }
+
+.wrap {
+  width: min(940px, calc(100% - 28px));
+  margin: auto;
+  padding: 75px 0 35px;
+  position: relative;
+}
+
+.hero {
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.eyebrow {
+  display: inline-block;
+  background: #fff8e9c9;
+  border: 1px solid white;
+  border-radius: 30px;
+  padding: 10px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.cake {
+  font-size: 58px;
+  margin-top: 20px;
+  animation: bob 2s infinite ease-in-out;
+}
+
+h1 {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: clamp(38px, 8vw, 78px);
+  line-height: 1.05;
+  margin: 18px 0;
+  color: #713c62;
+}
+
+.name {
+  display: block;
+  font-family: 'Pacifico', cursive;
+  color: #f06482;
+  font-weight: 400;
+  font-size: clamp(44px, 10vw, 85px);
+  text-shadow: 2px 3px white;
+}
+
+.subtitle {
+  max-width: 570px;
+  margin: 15px auto 24px;
+  line-height: 1.8;
+}
+
+button {
+  padding: 13px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 30px;
+  font: 700 15px 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+button:hover { transform: translateY(-3px); }
+
+.primary {
+  background: linear-gradient(135deg, #ff7185, #df4d81);
+  color: white;
+  box-shadow: 0 5px 0 #bd4169;
+}
+
+.secondary {
+  background: var(--cream);
+  color: var(--purple);
+  box-shadow: 0 5px 0 #e9a9b5;
+}
+
+.card {
+  margin-top: 25px;
+  padding: clamp(18px, 4vw, 32px);
+  border-radius: 28px;
+  background: #fff9eddf;
+  border: 1px solid #ffffffd9;
+  box-shadow: 0 20px 50px #91485a17;
+}
+
+.memory {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 35px;
+  align-items: center;
+}
+
+.photo-frame {
+  position: relative;
+  padding: 10px;
+  background: white;
+  border-radius: 20px;
+  transform: rotate(-2deg);
+  box-shadow: 0 12px 25px #6c33421c;
+}
+
+.photo-frame::after {
+  content: "♡";
+  position: absolute;
+  right: -13px;
+  top: -18px;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #bd4169;
+  font-size: 28px;
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 13px;
+}
+
+.message h2, .wishes h2 {
+  font: 400 clamp(26px, 4vw, 38px) 'Pacifico', cursive;
+  color: #ed6d80;
+  margin: 0 0 15px;
+}
+
+.message p {
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+.signature {
+  color: #d85879;
+  font-family: 'Pacifico', cursive;
+  font-size: 19px !important;
+}
+
+.wishes { text-align: center; }
+
+.wish-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.wish {
+  padding: 20px 12px;
+  border-radius: 18px;
+  background: #fff2df;
+  border: 1px solid white;
+}
+
+.emoji {
+  display: block;
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+.wish strong { display: block; margin-bottom: 7px; }
+.wish small { line-height: 1.6; color: #85596b; }
+
+footer {
+  text-align: center;
+  padding: 28px 10px;
+  font-size: 13px;
+  color: #8c5268;
+}
+
+.hidden-message {
+  display: none;
+  max-width: 650px;
+  margin: 20px auto;
+  padding: 18px;
+  border-radius: 20px;
+  background: #fff8e9e8;
+  line-height: 1.8;
+  animation: appear .5s ease;
+}
+
+.hidden-message.show { display: block; }
+
+.sparkle {
+  position: fixed;
+  pointer-events: none;
+  animation: float 5s infinite ease-in-out;
+  z-index: 0;
+}
+
+.confetti {
+  position: fixed;
+  top: -20px;
+  width: 9px;
+  height: 14px;
+  z-index: 99;
+  pointer-events: none;
+  animation: fall 4s linear forwards;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-10px) rotate(4deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px) rotate(12deg); }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fall {
+  to {
+    transform: translate(var(--drift), 110vh) rotate(720deg);
+    opacity: .8;
+  }
+}
+
+@media (max-width: 650px) {
+  .wrap { width: calc(100% - 20px); padding-top: 60px; }
+  .memory { grid-template-columns: 1fr; gap: 25px; }
+  .photo-frame { width: 100%; max-width: 420px; margin: auto; }
+  .message { text-align: center; }
+  .wish-grid { grid-template-columns: 1fr; }
+  .wish { display: flex; align-items: center; gap: 15px; text-align: left; }
+  .emoji { margin: 0; min-width: 42px; }
+  .card { border-radius: 23px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bunting" aria-hidden="true">
+  <span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span>
+</div>
+
+<span class="sparkle" style="top:20%;left:5%">✦</span>
+<span class="sparkle" style="top:40%;right:6%;font-size:28px">✧</span>
+<span class="sparkle" style="top:75%;left:5%;font-size:25px">♡</span>
+<span class="sparkle" style="top:85%;right:7%">✦</span>
+
+<main class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">🎀 A LITTLE BIRTHDAY SURPRISE 🎀</div>
+
+    <div class="cake">🎂</div>
+
+    <h1>
+      Happy 21st Birthday,
+      <span class="name">Chrissnaa!</span>
+    </h1>
+
+    <p class="subtitle">
+      Twenty-one looks like a beautiful new chapter.
+      Today is all about celebrating you, your smile,
+      and all the wonderful things waiting for you. 💗
+    </p>
+
+    <button class="primary" id="surpriseBtn">
+      ✨ Open your surprise
+    </button>
+
+    <button class="secondary" id="musicBtn">
+      ♫ Play birthday tune
+    </button>
+
+    <div class="hidden-message" id="surpriseMessage">
+      🎉 Surprise, Chrissnaa! I hope your 21st year brings
+      you more happiness than you can count, people who love
+      you well, little adventures, big wins, and memories that
+      make you smile for years. You deserve so much good. 💖
+    </div>
+  </header>
+
+  <section class="card memory">
+    <div class="photo-frame">
+      <img src="chrissnaa.jpg" alt="Chrissnaa's birthday photo">
+    </div>
+
+    <div class="message">
+      <h2>To the birthday girl…</h2>
+
+      <p>
+        Happy birthday to someone who deserves the sweetest
+        day and the brightest year ahead. May your days be
+        filled with genuine laughter, peaceful moments,
+        exciting opportunities, and the kind of love that
+        makes you feel appreciated.
+      </p>
+
+      <p>
+        Keep being your lovely self, keep dreaming big, and
+        never forget how special you are. Here's to 21 — may
+        it be soft when life is hard, exciting when you need
+        an adventure, and beautiful in ways you never expected. 🦋
+      </p>
+
+      <p class="signature">With lots of love, always ♡</p>
+    </div>
+  </section>
+
+  <section class="card wishes">
+    <h2>My wishes for your 21st ✨</h2>
+    <p>May this new chapter bring you all the little things that make life magical.</p>
+
+    <div class="wish-grid">
+      <div class="wish">
+        <span class="emoji">🌷</span>
+        <div>
+          <strong>More happiness</strong>
+          <small>Everyday reasons to smile and feel loved.</small>
+        </div>
+      </div>
+
+      <div class="wish">
+        <span class="emoji">🌟</span>
+        <div>
+          <strong>Beautiful dreams</strong>
+          <small>Courage to chase them and joy when they come true.</small>
+        </div>
+      </div>
+
+      <div class="wish">
+        <span class="emoji">🥂</span>
+        <div>
+          <strong>Unforgettable memories</strong>
+          <small>New adventures, silly laughs, and stories to keep.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Made with 💗 just for Chrissnaa · 21 looks wonderful on you!
+  </footer>
+
+</main>
+
+<script>
+const surpriseBtn = document.getElementById("surpriseBtn");
+const surpriseMessage = document.getElementById("surpriseMessage");
+const musicBtn = document.getElementById("musicBtn");
+
+let audioContext = null;
+let playing = false;
+let stopTimer = null;
+
+function confettiBurst(amount = 90) {
+  const colors = [
+    "#ff7185", "#ffda78", "#d78eb0",
+    "#fff1d4", "#9dc9bb", "#f7a7c5"
+  ];
+
+  for (let i = 0; i < amount; i++) {
+    const piece = document.createElement("div");
+    piece.className = "confetti";
+    piece.style.left = Math.random() * 100 + "vw";
+    piece.style.background =
+      colors[Math.floor(Math.random() * colors.length)];
+    piece.style.setProperty(
+      "--drift",
+      (Math.random() * 220 - 110) + "px"
+    );
+    piece.style.animationDuration = (3 + Math.random() * 3) + "s";
+    piece.style.animationDelay = Math.random() * 0.5 + "s";
+
+    document.body.appendChild(piece);
+    setTimeout(() => piece.remove(), 7000);
+  }
+}
+
+surpriseBtn.addEventListener("click", () => {
+  surpriseMessage.classList.toggle("show");
+
+  surpriseBtn.textContent =
+    surpriseMessage.classList.contains("show")
+      ? "💖 Surprise opened!"
+      : "✨ Open your surprise";
+
+  confettiBurst(120);
+});
+
+// Happy Birthday melody made with the browser's audio system.
+function playMelody() {
+  const notes = [
+    [392,.32],[392,.18],[440,.5],[392,.5],[523,.5],[494,.9],
+    [392,.32],[392,.18],[440,.5],[392,.5],[587,.5],[523,.9],
+    [392,.32],[392,.18],[784,.5],[659,.5],[523,.5],[494,.5],[440,.9],
+    [698,.32],[698,.18],[659,.5],[523,.5],[587,.5],[523,1]
+  ];
+
+  const start = audioContext.currentTime + 0.1;
+  let position = 0;
+
+  notes.forEach(([frequency, duration]) => {
+    const oscillator = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+    const time = start + position;
+
+    oscillator.type = "sine";
+    oscillator.frequency.value = frequency;
+
+    gain.gain.setValueAtTime(0.0001, time);
+    gain.gain.linearRampToValueAtTime(0.15, time + 0.03);
+    gain.gain.setValueAtTime(
+      0.15,
+      time + Math.max(0.04, duration - 0.08)
+    );
+    gain.gain.linearRampToValueAtTime(
+      0.0001,
+      time + duration
+    );
+
+    oscillator.connect(gain);
+    gain.connect(audioContext.destination);
+
+    oscillator.start(time);
+    oscillator.stop(time + duration + 0.03);
+
+    position += duration + 0.07;
+  });
+
+  return position;
+}
+
+async function startMusic() {
+  if (playing) return;
+
+  try {
+    const AudioContextClass =
+      window.AudioContext || window.webkitAudioContext;
+
+    if (!AudioContextClass) return;
+
+    audioContext = new AudioContextClass();
+    await audioContext.resume();
+
+    // Some browsers allow this; others require user interaction.
+    if (audioContext.state !== "running") return;
+
+    playing = true;
+    musicBtn.textContent = "♫ Stop birthday tune";
+
+    const duration = playMelody();
+
+    stopTimer = setTimeout(() => {
+      playing = false;
+      musicBtn.textContent = "♫ Play birthday tune";
+
+      if (audioContext) {
+        audioContext.close();
+        audioContext = null;
+      }
+    }, duration * 1000 + 200);
+
+  } catch (error) {
+    console.log("Audio autoplay may be blocked by the browser.");
+  }
+}
+
+async function stopMusic() {
+  clearTimeout(stopTimer);
+
+  if (audioContext) {
+    await audioContext.close();
+    audioContext = null;
+  }
+
+  playing = false;
+  musicBtn.textContent = "♫ Play birthday tune";
+}
+
+musicBtn.addEventListener("click", async () => {
+  if (playing) {
+    await stopMusic();
+  } else {
+    await startMusic();
+  }
+});
+
+// Attempt to start the birthday music automatically.
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    confettiBurst(50);
+    startMusic();
+  }, 700);
+});
+</script>
+
+</body>
+</html>
+
